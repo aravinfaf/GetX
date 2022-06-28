@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +26,19 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      // home:
+      home: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          TextButton(
+            onPressed: () {
+              Get.to(HomeScreen(),
+                  arguments: "Sent from MainScreen", fullscreenDialog: true);
+            },
+            child: Text("Go to Home"),
+          ),
+        ],
+      ),
     );
   }
 }
